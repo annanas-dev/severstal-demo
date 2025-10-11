@@ -1,0 +1,14 @@
+services:
+  severstal-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: severstal-clustering
+    ports:
+      - "8502:8502"
+    volumes:
+      - ./:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+
